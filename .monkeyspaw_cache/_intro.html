@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt-Based Web Framework</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000; /* Replace with the actual color from style.md */
+            color: #ffffff; /* Replace with the actual color from style.md */
+            font-family: sans-serif; /* Example font, adjust as needed */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            background-color: #222; /* Example background, adjust as needed */
+            padding: 2rem;
+            border: 2px solid #666; /* Example border, adjust as needed */
+            border-radius: 8px; /* Optional: for rounded corners */
+        }
+
+        .slide-content {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .image-container {
+            width: 50%;
+        }
+
+        .text-container {
+            width: 50%;
+        }
+
+        .navigation {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #888;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slide-content">
+            <div class="image-container">
+                <img src="assets/we_were_voyagers.gif" alt="Reference Image" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="text-container">
+                <h1 class="text-2xl font-bold mb-4">Hello, world! It's good to be back</h1>
+                <ul class="list-disc pl-5">
+                    <li>Prompt-driven development: A new paradigm</li>
+                    <li>AI generation replaces traditional templating</li>
+                    <li>File-based routing (like Next.js) for simplicity</li>
+                    <li>On-the-fly content: Dynamic and engaging</li>
+                </ul>
+                <p class="mt-4">But does this mean the machines will be the end of us all? Time will tell...</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <div></div>
+            <div><a href="#" class="text-blue-500 hover:underline">Next</a></div>
+        </div>
+    </div>
+    <div class="footer">
+    <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" style="height: 20px; margin-right: 5px; display: inline-block;">We were voyagers. We can voyage again!
+</div>
+</body>
+</html>

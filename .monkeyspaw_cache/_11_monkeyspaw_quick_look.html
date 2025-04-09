@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonkeysPaw: Prompt -> Web Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6; /* Example background color */
+            color: #333; /* Example text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 80vw;
+            height: 80vh;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            display: flex;
+        }
+
+        .left-side {
+            width: 50%;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .right-side {
+            width: 50%;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navigation a {
+            color: #007bff; /* Example link color */
+            text-decoration: none;
+        }
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+
+        h1, h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        img.ruby-logo {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          width: 50px; /* Adjust size as needed */
+          height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1>MonkeysPaw Home Page</h1>
+
+            <h2>Page Content</h2>
+
+            <p>Create a dramatic, visually striking home page for the MonkeysPaw Ruby gem that introduces the concept of "wish-driven development." The page should convey both the power and the potential danger of using the framework.</p>
+
+            <h3>Hero Section</h3>
+            <ul>
+                <li>Large, dramatic headline: "MonkeysPaw 🐒✋"</li>
+                <li>Tagline: "Wish-Driven Development for Ruby"</li>
+                <li>Dramatic subtitle: "Be careful what you wish for..."</li>
+                <li>Brief 2-3 sentence explanation: "A prompt-driven web framework that grants your web development wishes through AI. Like the legendary monkey's paw, it will fulfill your requests exactly as stated—for better or worse."</li>
+                <li>Call-to-action button: "Make Your First Wish" (links to Getting Started)</li>
+            </ul>
+
+            <h3>Key Features Section</h3>
+            <p>Title: "The Power of the Paw"</p>
+            <ul>
+                <li>3 feature cards with icons:
+                    <ol>
+                        <li><strong>Prompt-Driven</strong>: "Express your intentions through natural language, not code"</li>
+                        <li><strong>AI-Powered</strong>: "Harness advanced language models to generate complete web pages"</li>
+                        <li><strong>Eerily Accurate</strong>: "Get precisely what you ask for—exactly as you phrase it"</li>
+                    </ol>
+                </li>
+            </ul>
+            <p>Each card should have a subtle warning about the consequences of imprecise wishes</p>
+
+            <h3>How It Works Section</h3>
+            <p>Simple 3-step graphic showing:</p>
+            <ul>
+                <li>Write your wish (prompt)</li>
+                <li>The paw curls (processing)</li>
+                <li>Your page manifests (result)</li>
+            </ul>
+            <p>Include a brief code sample showing how simple it is to use:</p>
+            <pre><code>require 'monkeyspaw'
+
+# Make your wish come true
+MonkeysPaw.pick_up!
+</code></pre>
+            <p>Note explaining: "MonkeysPaw reads your wishes from the <code>wishes/</code> directory and manifests your content at http://localhost:1337"</p>
+
+            <h3>Testimonials Section</h3>
+            <p>Title: "Tales of Granted Wishes"</p>
+            <p>3-4 fictional but amusing testimonials that hint at both success and unexpected consequences:</p>
+            <ul>
+                <li>"I wished for a contact form and got exactly that—though I forgot to ask for form validation. Be specific!" — Ruby Developer</li>
+                <li>"Asked for an 'eye-catching' header and now visitors can't look away... literally. Impressive, if slightly concerning." — Web Designer</li>
+                <li>"The landing page I wished for converts 200% better than my hand-coded one. I'm both thrilled and slightly unnerved." — Startup Founder</li>
+            </ul>
+
+            <h3>Final Call-to-Action</h3>
+            <ul>
+                <li>Large button: "Learn to Make Careful Wishes" (links to Getting Started)</li>
+            </ul>
+            <p>Small warning text beneath: "Remember: With great power comes the responsibility to be precise."</p>
+
+            <h3>Visual Elements</h3>
+            <ul>
+                <li>Incorporate a subtle animated monkey's paw that curls one finger for each section scrolled</li>
+                <li>Add magical/mystical accents without being too whimsical</li>
+                <li>Create an atmosphere that balances wonder with a touch of foreboding</li>
+            </ul>
+        </div>
+        <div class="right-side">
+            <img src="assets/monkeyspaw_sample_homepage.png" alt="MonkeysPaw Rendered Page">
+        </div>
+    </div>
+    <img src="assets/artificial-ruby-logo.png" alt="Ruby Logo" class="ruby-logo">
+    <div class="navigation">
+        <a href="/10_the_reveal">Previous</a>
+        <a href="/12_lets_voyage_again">Next</a>
+    </div>
+</body>
+</html>

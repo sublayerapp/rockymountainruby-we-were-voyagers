@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Were Voyagers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sans', sans-serif;
+            background-color: #f0f0f0; /* Example background color */
+            color: #333; /* Example text color */
+            margin: 0;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Crect width='10' height='10' fill='%23ddd'/%3E%3Crect x='10' width='10' height='10' fill='%23eee'/%3E%3Crect y='10' width='10' height='10' fill='%23eee'/%3E%3Crect x='10' y='10' width='10' height='10' fill='%23ddd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .navigation a {
+            color: #0077cc; /* Example link color */
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #666;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center h-screen">
+
+    <div class="container bg-white rounded shadow-md">
+
+        <div class="slide-content">
+            <h1 class="text-4xl font-bold mb-4">We Were Voyagers. We Can Voyage Again!</h1>
+            <p class="text-xl leading-relaxed">A short, welcoming sentence</p>
+            <h2 class="text-3xl font-bold mb-4">Talks Focus:</h2>
+            <p class="text-xl leading-relaxed">Exploring Ruby's creative past and how AI offers a chance to reignite that spirit for the future</p>
+        </div>
+
+        <nav class="navigation flex justify-between mt-8">
+            <div>
+                <a href="/">Previous</a>
+            </div>
+            <div>
+                <a href="act1/rubys_duality">Next</a>
+            </div>
+        </nav>
+        
+    </div>
+     <footer class="footer">
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" style="height: 20px; margin-right: 5px;" />
+        We were voyagers. We can voyage again!
+    </footer>
+
+</body>
+</html>

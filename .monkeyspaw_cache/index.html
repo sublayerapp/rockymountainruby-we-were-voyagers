@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation Slide</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212; /* Example dark background */
+            color: #f0f0f0; /* Example light text color */
+            font-family: sans-serif; /* Standard sans-serif font */
+            margin: 0;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        .slide-container {
+            width: 80vw;
+            height: 80vh;
+            border: 1px solid #444;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            box-sizing: border-box;
+        
+        }
+
+        .content-area {
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            box-sizing: border-box;
+            overflow: auto; /* Enable scrolling if content overflows */
+        }
+
+        .navigation-area {
+            width: 100%;
+            padding: 0.5rem;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navigation-area a {
+            color: #00bcd4; /* Accent/Link color */
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: background-color 0.3s;
+        }
+
+        .navigation-area a:hover {
+            text-decoration: underline;
+        }
+
+        /* Add a subtle background pattern */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        .logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: auto;
+        }
+        .full-width-gif {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body class="flex justify-center items-center h-screen">
+    <div class="slide-container relative">
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="logo">
+        <div class="content-area">
+          <img src="assets/we_were_voyagers.gif" alt="Full Width GIF" class="full-width-gif">
+        </div>
+        <div class="navigation-area">
+            <div></div>
+            <a href="/02_golden_age">Next Slide</a>
+        </div>
+    </div>
+</body>
+</html>

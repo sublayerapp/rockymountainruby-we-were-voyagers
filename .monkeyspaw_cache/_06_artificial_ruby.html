@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artificial Ruby</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0; /* Example background color */
+            color: #333; /* Example text color */
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .slide-container {
+            width: 80vw;
+            height: 80vh;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .content-area {
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .navigation-area {
+            width: 100%;
+            padding: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navigation-area a {
+            color: #007bff; /* Example link color */
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .navigation-area a:hover {
+            text-decoration: underline;
+        }
+
+        h1, h2 {
+            color: #2d3748; /* Heading Text color */
+            margin-bottom: 0.5rem;
+        }
+
+        /* Example pattern, adjust to match the vibe */
+        body {
+            background-image: linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd),
+            linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="slide-container">
+        <div style="position: absolute; top: 10px; right: 10px;">
+            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" style="width: 50px; height: auto;">
+        </div>
+
+        <div class="content-area">
+            <h1 class="text-4xl font-bold mb-4">Artificial Ruby</h1>
+
+            <ul>
+                <li class="text-xl leading-relaxed">Our mission: Foster both sides.</li>
+                <li class="text-xl leading-relaxed">1. Share the essential practical tools (like we heard earlier!) that keep Ruby relevant.</li>
+                <li class="text-xl leading-relaxed">2. AND be the space to encourage and celebrate creative exploration & experimentation.</li>
+            </ul>
+        </div>
+
+        <div class="navigation-area">
+            <a href="/05_ai">Prev</a>
+            <a href="/07_call_for_speakers">Next</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation Slide</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a202c; /* Example background color from style.md */
+            color: #edf2f7; /* Example text color from style.md */
+            font-family: sans-serif; /* Example font */
+            margin: 0;
+            height: 100vh;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+
+        .slide-container {
+            width: 80vw;
+            height: 80vh;
+            border: 1px solid #4a5568; /* Example border color */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            box-sizing: border-box;
+            margin: 0 auto; /* Horizontal centering */
+            position: absolute; /* Allows vertical centering */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .slide-content {
+            flex-grow: 1;
+            width: 100%;
+            padding: 1rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navigation {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
+
+        .navigation a {
+            color: #81e6d9; /* Example accent/link color */
+            text-decoration: none;
+        }
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+
+        .ruby-logo {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 50px; /* Adjust size as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="ruby-logo">
+        <div class="slide-content">
+            <img src="assets/know_something_you_dont.gif" alt="Know Something You Don't" style="width: 100%;">
+        </div>
+        <div class="navigation">
+            <a href="/08_the_setup">Prev</a>
+            <a href="/10_the_reveal">Next</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Something You Don't</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Creepster&family=Nosifer&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ff00ff;
+            background-image: 
+                radial-gradient(circle at 25px 25px, #00ff00 2px, transparent 2px),
+                radial-gradient(circle at 75px 75px, #ffff00 2px, transparent 2px);
+            background-size: 100px 100px;
+            font-family: 'Permanent Marker', cursive;
+        }
+        .slide-container {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+            border: 4px solid #000;
+            box-shadow: 8px 8px 0px #333;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-black">
+    <!-- Navigation Previous -->
+    <div class="fixed left-8 top-1/2 transform -translate-y-1/2">
+        <a href="/15_but_wait" class="text-white bg-black px-4 py-2 text-xl font-bold hover:underline hover:bg-gray-800 border-2 border-white">Previous</a>
+    </div>
+    
+    <!-- Main Slide Container -->
+    <div class="slide-container w-[80vw] h-[80vh] relative flex flex-col justify-center items-center p-8">
+        <!-- Logo in top right -->
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="absolute top-4 right-4 w-16 h-16">
+        
+        <!-- Main Content -->
+        <div class="flex-1 flex items-center justify-center w-full">
+            <img src="assets/know_something_you_dont.gif" alt="Know Something You Don't" class="w-full h-auto max-h-full object-contain">
+        </div>
+    </div>
+    
+    <!-- Navigation Next -->
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2">
+        <a href="/17_monkeys_paw" class="text-white bg-black px-4 py-2 text-xl font-bold hover:underline hover:bg-gray-800 border-2 border-white">Next</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>But it wasn't just _Why</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+            background-size: 400% 400%;
+            animation: rainbow 15s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .slide-container {
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(255, 255, 255, 0.95),
+                rgba(255, 255, 255, 0.95) 2px,
+                rgba(0, 0, 0, 0.1) 2px,
+                rgba(0, 0, 0, 0.1) 4px
+            );
+            border: 4px solid #333;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        h1 {
+            font-family: 'Orbitron', monospace;
+            color: #2c3e50;
+            text-shadow: 2px 2px 0px #ecf0f1, 4px 4px 0px #34495e;
+        }
+        
+        .content-text {
+            color: #2c3e50;
+            font-weight: 400;
+        }
+        
+        .highlight {
+            background: linear-gradient(45deg, #ffeb3b, #ff9800);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .navigation-link {
+            color: #e74c3c;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .navigation-link:hover {
+            color: #c0392b;
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
+        
+        .example-box {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            box-shadow: 3px 3px 0px #2980b9;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-gray-900">
+    
+    <!-- Previous Navigation -->
+    <div class="absolute left-8 top-1/2 transform -translate-y-1/2">
+        <a href="/06_2_why_and_camping" class="navigation-link">Previous</a>
+    </div>
+
+    <!-- Main Slide Container -->
+    <div class="slide-container w-[80vw] h-[80vh] flex flex-col items-center justify-center p-8 relative">
+        
+        <!-- Logo in top right -->
+        <div class="absolute top-4 right-4">
+            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="h-12 w-12">
+        </div>
+        
+        <!-- Slide Content -->
+        <div class="flex-1 flex flex-col justify-center items-center text-center max-w-4xl">
+            
+            <h1 class="text-5xl font-black mb-8">
+                But it wasn't just <span class="italic">_Why</span>
+            </h1>
+            
+            <p class="content-text text-xl mb-8 leading-relaxed">
+                <span class="highlight">_why's spirit still lives on</span> even within the other examples we talked about today:
+            </p>
+            
+            <div class="space-y-6 text-lg">
+                <div class="example-box">
+                    <p class="content-text">
+                        <strong>Rails</strong> with <code class="bg-gray-200 px-2 py-1 rounded font-mono">Array.forty_two</code>
+                    </p>
+                </div>
+                
+                <div class="example-box">
+                    <p class="content-text">
+                        <strong>RVM</strong> with the installation method of <span class="highlight">piping curl directly to bash</span><br>
+                        <span class="text-sm">(which Wayne got some undeserved flak for)</span>
+                    </p>
+                </div>
+                
+                <div class="example-box">
+                    <p class="content-text">
+                        <strong>RSpec/Cucumber</strong> and frankly the whole <span class="highlight">BDD movement</span><br>
+                        which turned testing into <em>expressive storytelling</em>
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Next Navigation -->
+    <div class="absolute right-8 top-1/2 transform -translate-y-1/2">
+        <a href="/07_the_great_mellowing" class="navigation-link">Next</a>
+    </div>
+
+</body>
+</html>

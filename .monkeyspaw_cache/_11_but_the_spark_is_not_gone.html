@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>But the spark is not gone!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .geocities-border {
+            border: 4px dashed #ff00ff;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.5), inset 0 0 20px rgba(0, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        .sparkle-text {
+            text-shadow: 2px 2px 4px rgba(255, 0, 255, 0.8), -1px -1px 2px rgba(0, 255, 255, 0.6);
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .nav-link:hover {
+            transform: scale(1.1);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-purple-900 relative overflow-hidden">
+    <!-- Background pattern elements -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-10 left-10 text-6xl blink">⭐</div>
+        <div class="absolute top-20 right-20 text-4xl blink">✨</div>
+        <div class="absolute bottom-20 left-20 text-5xl blink">🌟</div>
+        <div class="absolute bottom-10 right-10 text-3xl blink">💎</div>
+        <div class="absolute top-1/2 left-10 text-4xl blink">🔥</div>
+        <div class="absolute top-1/3 right-10 text-5xl blink">💫</div>
+    </div>
+
+    <!-- Previous Link -->
+    <div class="fixed left-8 top-1/2 transform -translate-y-1/2 z-20">
+        <a href="/10_the_spark_dims" class="nav-link text-2xl font-bold text-white hover:text-yellow-300 hover:underline">
+            Previous
+        </a>
+    </div>
+
+    <!-- Next Link -->
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-20">
+        <a href="/12_ai_the_new_wilderness" class="nav-link text-2xl font-bold text-white hover:text-yellow-300 hover:underline">
+            Next
+        </a>
+    </div>
+
+    <!-- Main Slide Container -->
+    <div class="w-[80vw] h-[80vh] geocities-border rounded-lg p-8 flex flex-col items-center justify-center relative">
+        <!-- Artificial Ruby Logo -->
+        <div class="absolute top-4 right-4">
+            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="w-16 h-16 opacity-90">
+        </div>
+
+        <!-- Slide Content -->
+        <div class="text-center max-w-4xl">
+            <!-- Title -->
+            <h1 class="text-6xl font-bold mb-12 sparkle-text text-red-600" style="font-family: 'Creepster', cursive;">
+                But the spark is not gone! 🔥
+            </h1>
+
+            <!-- Main Content -->
+            <div class="text-left text-xl leading-relaxed space-y-6">
+                <div class="bg-gradient-to-r from-yellow-200 to-pink-200 p-6 rounded-lg border-2 border-purple-500">
+                    <p class="text-2xl font-bold mb-4 text-center sparkle-text">Evidence the spark lives on:</p>
+                    
+                    <ol class="list-decimal list-inside space-y-4 text-lg">
+                        <li class="flex items-start">
+                            <span class="font-bold text-purple-700 mr-2">1)</span>
+                            <span>People at <span class="font-bold text-red-600">Madison Ruby last year</span> who don't even work professionally in Ruby anymore! 💼➡️❤️</span>
+                        </li>
+                        
+                        <li class="flex items-start">
+                            <span class="font-bold text-purple-700 mr-2">2)</span>
+                            <span><span class="font-bold text-blue-600">Artificial Ruby</span>, my monthly Ruby+AI meetup in NYC regularly gets <span class="font-bold text-green-600 text-xl">over 50 people</span> on a Wednesday night in New York for a language the AI industry practically doesn't know exists! 🤖💎</span>
+                        </li>
+                        
+                        <li class="flex items-start">
+                            <span class="font-bold text-purple-700 mr-2">3)</span>
+                            <span><span class="font-bold text-orange-600">All of you here</span>, none of you decided to head over and start happy hour early! 🍻✋</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative elements -->
+        <div class="absolute bottom-4 left-4 text-3xl blink">🚀</div>
+        <div class="absolute bottom-4 right-20 text-2xl blink">💻</div>
+    </div>
+</body>
+</html>

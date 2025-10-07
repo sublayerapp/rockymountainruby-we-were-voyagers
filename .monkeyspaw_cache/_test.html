@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-purple-900">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Metaprogramming: The Original Prompt Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: 
+                radial-gradient(circle at 25% 25%, #ff69b4 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, #00ffff 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, #ffff00 0%, transparent 50%),
+                radial-gradient(circle at 25% 75%, #ff4500 0%, transparent 50%),
+                linear-gradient(45deg, #4b0082, #8b008b);
+        }
+        .chat-bubble-hare {
+            background: #90EE90;
+            border-radius: 20px;
+            padding: 15px;
+            margin: 10px;
+            position: relative;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+        }
+        .chat-bubble-hare::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 15px solid #90EE90;
+        }
+        .chat-bubble-tortoise {
+            background: #FFD700;
+            border-radius: 20px;
+            padding: 15px;
+            margin: 10px;
+            position: relative;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+        }
+        .chat-bubble-tortoise::before {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 15px solid #FFD700;
+        }
+        .code-block {
+            background: #2d1b69;
+            color: #00ff41;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border: 2px solid #00ff41;
+            overflow-x: auto;
+        }
+        .sparkle {
+            animation: sparkle 2s infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .character {
+            font-size: 4rem;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-white">
+    <div class="w-[80vw] h-[80vh] bg-black bg-opacity-40 rounded-3xl border-4 border-pink-500 flex flex-col p-6 shadow-2xl relative">
+        <!-- Logo -->
+        <div class="absolute top-4 right-4">
+            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="w-16 h-16">
+        </div>
+        
+        <!-- Title -->
+        <div class="text-center mb-6">
+            <h1 class="text-4xl font-bold text-yellow-300 sparkle">🐰🐢 Ruby Metaprogramming: The OG Prompt Engineering 🐢🐰</h1>
+            <div class="text-lg text-cyan-300 mt-2">A Tale of Code Generation Before It Was Cool</div>
+        </div>
+        
+        <!-- Chat Conversation -->
+        <div class="flex-1 overflow-y-auto space-y-4">
+            <!-- Hare speaks first -->
+            <div class="flex items-start">
+                <div class="character">🐰</div>
+                <div class="chat-bubble-hare flex-1">
+                    <div class="font-bold text-green-800">Speedy Hare:</div>
+                    <div class="text-black mt-1">Hey Tortoise! I just discovered this amazing thing called "prompt engineering" where you give instructions to make code write itself!</div>
+                </div>
+            </div>
+            
+            <!-- Tortoise responds -->
+            <div class="flex items-end justify-end">
+                <div class="chat-bubble-tortoise flex-1">
+                    <div class="font-bold text-orange-800">Wise Tortoise:</div>
+                    <div class="text-black mt-1">Oh my friend, Ruby developers have been doing that since 2003! Watch this metaprogramming magic...</div>
+                </div>
+                <div class="character">🐢</div>
+            </div>
+            
+            <!-- Code example -->
+            <div class="code-block">
+                <div class="text-cyan-400 mb-2"># Ruby metaprogramming: The original prompt engineering</div>
+                <pre class="text-sm">
+class APIClient
+  # "Generate getter and setter methods for these attributes"
+  attr_accessor :token, :base_url, :timeout
+  
+  # "Create methods dynamically based on HTTP verbs"
+  %w[get post put delete].each do |verb|
+    define_method(verb) do |path, params = {}|
+      # HTTP request logic here
+      puts "#{verb.upcase} #{@base_url}#{path} with #{params}"
+    end
+  end
+  
+  # "Generate validation methods for all required fields"
+  %w[token base_url].each do |field|
+    define_method("validate_#{field}") do
+      raise "#{field} is required" if instance_variable_get("@#{field}").nil?
+    end
+  end
+end
+
+# Usage: The "prompt" generated all these methods!
+client = APIClient.new
+client.token = "abc123"
+client.base_url = "https://api.example.com"
+
+client.get("/users")        # Generated method!
+client.validate_token       # Generated method!
+client.validate_base_url    # Generated method!</pre>
+            </div>
+            
+            <!-- Hare's amazement -->
+            <div class="flex items-start">
+                <div class="character">🐰</div>
+                <div class="chat-bubble-hare flex-1">
+                    <div class="font-bold text-green-800">Speedy Hare:</div>
+                    <div class="text-black mt-1">Whoa! So `attr_accessor` and `define_method` are like Ruby's built-in prompt templates? You give it instructions and it writes the code?</div>
+                </div>
+            </div>
+            
+            <!-- Tortoise explains -->
+            <div class="flex items-end justify-end">
+                <div class="chat-bubble-tortoise flex-1">
+                    <div class="font-bold text-orange-800">Wise Tortoise:</div>
+                    <div class="text-black mt-1">Exactly! Ruby's metaprogramming is just structured prompt engineering:
+                    <br>• <strong>attr_accessor :name</strong> = "Generate getter and setter for name"
+                    <br>• <strong>define_method</strong> = "Create this method dynamically"
+                    <br>• <strong>method_missing</strong> = "Handle unknown method calls gracefully"
+                    <br><br>We've been prompt engineering all along!</div>
+                </div>
+                <div class="character">🐢</div>
+            </div>
+            
+            <!-- Final wisdom -->
+            <div class="flex items-end justify-end">
+                <div class="chat-bubble-tortoise flex-1">
+                    <div class="font-bold text-orange-800">Wise Tortoise:</div>
+                    <div class="text-black mt-1">Remember: Slow and steady wins the race. Ruby taught us to generate code declaratively decades before LLMs made it mainstream! 🏆</div>
+                </div>
+                <div class="character">🐢</div>
+            </div>
+        </div>
+        
+        <!-- Fun fact at bottom -->
+        <div class="text-center text-pink-300 text-sm mt-4 sparkle">
+            💎 Fun Fact: Rails' ActiveRecord is basically a giant prompt engineering framework! 💎
+        </div>
+    </div>
+    
+    <!-- Navigation would go here but none specified in the prompt -->
+</body>
+</html>

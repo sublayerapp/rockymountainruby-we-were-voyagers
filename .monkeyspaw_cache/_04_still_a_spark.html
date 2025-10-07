@@ -4,108 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>But The Spark Isn't Extinguished!</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #0F172A; /* Example dark background */
-            color: #CBD5E0; /* Example light text */
-            margin: 0;
-            height: 100vh;
-            overflow: hidden; /* Prevent scrollbars */
+            background: linear-gradient(45deg, #ff6b6b 0%, #4ecdc4 25%, #45b7d1 50%, #96ceb4 75%, #ffeaa7 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            font-family: 'Comic Neue', cursive;
         }
-
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
         .slide-container {
-            width: 80vw;
-            height: 80vh;
-            border: 1px solid #475569; /* Example border color */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.95);
+            border: 4px solid #ff1744;
+            box-shadow: 0 0 20px rgba(255, 23, 68, 0.5);
         }
-
-        .content-area {
-            flex-grow: 1;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 0 1rem;
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
-
-        .navigation-area {
-            width: 100%;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        .navigation-area a {
-            color: #818CF8; /* Example link color */
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 0.25rem;
+        
+        .nav-link {
+            color: #ff1744;
+            transition: all 0.3s ease;
         }
-
-        .navigation-area a:hover {
+        
+        .nav-link:hover {
             text-decoration: underline;
-        }
-
-        h1, h2 {
-            font-size: 2.25rem; /* 36px */
-            font-weight: bold;
-            color: #94A3B8; /* Example heading text color */
-            margin-bottom: 0.75rem; /* 12px */
-        }
-
-        p {
-            font-size: 1.25rem; /* 20px */
-            line-height: 1.75rem; /* 28px */
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 2rem;
-        }
-
-        ol {
-            list-style-type: decimal;
-            padding-left: 2rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
+            transform: scale(1.1);
+            text-shadow: 2px 2px 4px rgba(255, 23, 68, 0.3);
         }
     </style>
 </head>
-<body class="flex justify-center items-center">
-
-    <div class="slide-container">
-        <div style="position: absolute; top: 10px; right: 10px;">
-            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" width="50">
+<body class="min-h-screen flex items-center justify-center text-gray-800">
+    <div class="slide-container w-[80vw] h-[80vh] flex flex-col p-8 relative">
+        <!-- Logo -->
+        <div class="absolute top-4 right-4">
+            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="w-16 h-16">
         </div>
-        <div class="content-area">
-            <h1 class="text-3xl font-bold text-center">But The Spark Isn't Extinguished!</h1>
-            <ul>
-                <li>I see it in the vital, practical AI work shared tonight by Hao & Amanda!</li>
-                <li>I see it in the passion at events like Madison Ruby where many attendees
-                    weren't even working professionally in ruby.</li>
-                <li>And I see it in this room – all of you exploring Ruby & AI!</li>
-            </ul>
+        
+        <!-- Main Content Area -->
+        <div class="flex-grow flex flex-col justify-center items-center text-center space-y-12">
+            <!-- Title -->
+            <h1 class="text-6xl font-bold text-red-600 mb-12 drop-shadow-lg">
+                But The Spark Isn't Extinguished!
+            </h1>
+            
+            <!-- Animated Lines -->
+            <div class="space-y-8">
+                <p id="line1" class="fade-in text-4xl text-gray-700 leading-relaxed">
+                    You can see it in talks shared tonight by Hao & Amanda
+                </p>
+                
+                <p id="line2" class="fade-in text-4xl text-gray-700 leading-relaxed">
+                    You can see it at events like Madison Ruby
+                </p>
+                
+                <p id="line3" class="fade-in text-4xl text-gray-700 leading-relaxed">
+                    And I see it in this room
+                </p>
+            </div>
         </div>
-
-        <div class="navigation-area">
-            <a href="/03_maturing">Prev</a>
-            <a href="/06_artificial_ruby">Next</a>
+        
+        <!-- Navigation Area -->
+        <div class="flex justify-between items-center mt-8">
+            <a href="/03_maturing" class="nav-link text-2xl font-bold hover:underline">
+                ← Prev: /03_maturing
+            </a>
+            
+            <a href="/05_ai" class="nav-link text-2xl font-bold hover:underline">
+                Next: /05_ai →
+            </a>
         </div>
     </div>
-
+    
+    <script>
+        // Animation sequence for the fade-in lines
+        function animateLines() {
+            const lines = ['line1', 'line2', 'line3'];
+            
+            lines.forEach((lineId, index) => {
+                setTimeout(() => {
+                    document.getElementById(lineId).classList.add('visible');
+                }, (index + 1) * 1500); // 1.5 second delay between each line
+            });
+        }
+        
+        // Start animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(animateLines, 500); // Start after half a second
+        });
+    </script>
 </body>
 </html>

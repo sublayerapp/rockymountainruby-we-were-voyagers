@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Fredoka+One:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff8000);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .slide-container {
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255,255,255,0.1),
+                rgba(255,255,255,0.1) 10px,
+                rgba(0,0,0,0.1) 10px,
+                rgba(0,0,0,0.1) 20px
+            );
+            backdrop-filter: blur(2px);
+            border: 3px solid #ff00ff;
+            box-shadow: 0 0 20px rgba(255,0,255,0.5);
+        }
+
+        .placeholder-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .monkey-paw {
+            font-family: 'Creepster', cursive;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .nav-link:hover {
+            transform: scale(1.1);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-black">
+    
+    <!-- Navigation Links -->
+    <div class="fixed left-8 top-1/2 transform -translate-y-1/2 z-10">
+        <a href="17_monkeys_paw" class="nav-link text-2xl font-bold text-yellow-300 hover:text-yellow-100">← 17_monkeys_paw</a>
+    </div>
+    
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-10">
+        <a href="19_live_demo" class="nav-link text-2xl font-bold text-yellow-300 hover:text-yellow-100">19_live_demo →</a>
+    </div>
+
+    <!-- Main Slide Container -->
+    <div class="slide-container w-[80vw] h-[80vh] relative rounded-lg p-8 flex flex-col">
+        
+        <!-- Logo -->
+        <div class="absolute top-4 right-4">
+            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="w-16 h-16">
+        </div>
+
+        <!-- Content Area -->
+        <div class="flex-1 flex flex-col items-center justify-center text-center space-y-8">
+            
+            <!-- Title -->
+            <h1 class="monkey-paw text-6xl font-bold text-red-600 mb-8">How It Works</h1>
+            
+            <!-- Placeholder Content -->
+            <div class="placeholder-animation bg-black bg-opacity-30 rounded-lg p-8 max-w-4xl">
+                <div class="space-y-6">
+                    <div class="flex items-center justify-center space-x-4">
+                        <div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center">
+                            <span class="text-2xl">🐵</span>
+                        </div>
+                        <div class="text-4xl text-white">→</div>
+                        <div class="w-16 h-16 bg-purple-400 rounded-full flex items-center justify-center">
+                            <span class="text-2xl">🪄</span>
+                        </div>
+                        <div class="text-4xl text-white">→</div>
+                        <div class="w-16 h-16 bg-red-400 rounded-full flex items-center justify-center">
+                            <span class="text-2xl">💀</span>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-3xl font-bold text-cyan-300">The Monkey's Paw Process</h2>
+                    
+                    <div class="grid grid-cols-3 gap-6 text-white">
+                        <div class="bg-yellow-600 p-4 rounded">
+                            <h3 class="text-xl font-bold mb-2">Step 1: Wish</h3>
+                            <p>Make your innocent request</p>
+                        </div>
+                        <div class="bg-purple-600 p-4 rounded">
+                            <h3 class="text-xl font-bold mb-2">Step 2: Magic</h3>
+                            <p>The paw works its mysterious ways</p>
+                        </div>
+                        <div class="bg-red-600 p-4 rounded">
+                            <h3 class="text-xl font-bold mb-2">Step 3: Consequences</h3>
+                            <p>Unexpected terrible results</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-2xl text-lime-300 font-bold animate-bounce">
+                [Placeholder for detailed explanation]
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

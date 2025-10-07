@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby on Rails - Lasting Impact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .slide-container {
+            background: rgba(255, 255, 255, 0.95);
+            border: 3px dashed #ff1493;
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+        }
+        
+        .nav-link {
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d);
+            border: 2px solid #333;
+            box-shadow: 3px 3px 0px #333;
+            transition: all 0.2s;
+        }
+        
+        .nav-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0px #333;
+        }
+        
+        .impact-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 2px solid #333;
+            box-shadow: 4px 4px 0px #333;
+            transform: rotate(-1deg);
+        }
+        
+        .impact-item:nth-child(even) {
+            transform: rotate(1deg);
+        }
+        
+        .blink {
+            animation: blink 2s linear infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="text-gray-800 min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="absolute top-10 left-10 text-6xl animate-bounce">💎</div>
+        <div class="absolute top-20 right-20 text-4xl animate-pulse">🚀</div>
+        <div class="absolute bottom-20 left-20 text-5xl animate-spin">⭐</div>
+        <div class="absolute bottom-10 right-10 text-3xl animate-bounce">💰</div>
+    </div>
+
+    <!-- Navigation Links -->
+    <a href="/02_golden_age" class="nav-link fixed left-8 top-1/2 transform -translate-y-1/2 px-6 py-3 font-bold text-lg text-white rounded-lg hover:underline z-10">
+        Previous
+    </a>
+    
+    <a href="/04_testing" class="nav-link fixed right-8 top-1/2 transform -translate-y-1/2 px-6 py-3 font-bold text-lg text-white rounded-lg hover:underline z-10">
+        Next
+    </a>
+
+    <!-- Main Slide Container -->
+    <div class="slide-container w-[80vw] h-[80vh] rounded-lg p-8 flex flex-col justify-center items-center relative">
+        <!-- Logo -->
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="absolute top-4 right-4 w-16 h-16">
+        
+        <!-- Title -->
+        <h1 class="text-5xl font-bold text-center mb-8 text-red-600" style="font-family: 'Permanent Marker', cursive;">
+            Ruby on Rails
+            <div class="blink text-2xl text-purple-600 mt-2">⚡ LASTING IMPACT ⚡</div>
+        </h1>
+        
+        <!-- Subtitle -->
+        <h2 class="text-2xl font-bold text-center mb-8 text-blue-700">
+            20 Years of Web Revolution! 🌐
+        </h2>
+        
+        <!-- Impact Points -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div class="impact-item p-6 rounded-lg text-white">
+                <h3 class="text-xl font-bold mb-3 flex items-center">
+                    🌊 Web 2.0 Pioneer
+                </h3>
+                <p class="leading-relaxed">
+                    Rails was THE framework that enabled the social web revolution - 
+                    powering the shift from static pages to dynamic, interactive experiences!
+                </p>
+            </div>
+            
+            <div class="impact-item p-6 rounded-lg text-white">
+                <h3 class="text-xl font-bold mb-3 flex items-center">
+                    💸 IPO Machine 2010s
+                </h3>
+                <p class="leading-relaxed">
+                    The backbone of billion-dollar startups! Twitter, GitHub, Shopify, 
+                    Airbnb - Rails powered the unicorns to Wall Street glory!
+                </p>
+            </div>
+            
+            <div class="impact-item p-6 rounded-lg text-white">
+                <h3 class="text-xl font-bold mb-3 flex items-center">
+                    🚀 Developer Happiness
+                </h3>
+                <p class="leading-relaxed">
+                    "Convention over Configuration" became the gold standard - 
+                    making web development accessible and joyful for millions!
+                </p>
+            </div>
+            
+            <div class="impact-item p-6 rounded-lg text-white">
+                <h3 class="text-xl font-bold mb-3 flex items-center">
+                    🏗️ Architecture Evolution
+                </h3>
+                <p class="leading-relaxed">
+                    MVC pattern, RESTful APIs, and rapid prototyping - 
+                    Rails concepts shaped how we build web applications forever!
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer Message -->
+        <div class="mt-8 text-center">
+            <div class="text-lg font-bold text-green-600 animate-pulse">
+                ✨ Still going strong in 2024! ✨
+            </div>
+            <div class="text-sm text-gray-600 mt-2">
+                From garage startups to Fortune 500 - Rails changed everything! 💎
+            </div>
+        </div>
+    </div>
+</body>
+</html>

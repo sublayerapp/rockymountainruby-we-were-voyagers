@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby on Rails</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ff6b9d;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #ffde59 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #4ecdc4 3px, transparent 3px),
+                linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
+            background-size: 40px 40px, 60px 60px, 20px 20px, 20px 20px;
+            color: #2d3748;
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        .slide-container {
+            border: 5px solid #4a5568;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+        }
+        
+        h1 {
+            color: #2b6cb0;
+            text-shadow: 2px 2px 0px rgba(255,255,255,0.8);
+        }
+        
+        h2 {
+            color: #2b6cb0;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
+        }
+        
+        .nav-link {
+            color: #e53e3e;
+            text-decoration: underline;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 2px solid #e53e3e;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #e53e3e;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .impact-item {
+            background: linear-gradient(45deg, #ffd89b 0%, #19547b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 min-h-screen flex items-center justify-center">
+    <div class="slide-container w-[80vw] h-[80vh] p-8 relative flex flex-col">
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="logo">
+        
+        <div class="flex-1 flex flex-col items-center justify-center text-center space-y-8">
+            <h1 class="text-6xl font-bold mb-4">Ruby on Rails</h1>
+            
+            <div class="space-y-6 text-2xl leading-relaxed max-w-4xl">
+                <div class="impact-item text-3xl">
+                    Lasting impact on the industry 20 years on
+                </div>
+                
+                <div class="impact-item text-3xl">
+                    Critical to the web 2.0 wave
+                </div>
+                
+                <div class="impact-item text-3xl">
+                    Framework of IPOs through the 2010s
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <svg width="300" height="100" id="rails-visualization"></svg>
+            </div>
+        </div>
+        
+        <div class="flex justify-between items-center mt-8">
+            <a href="/02_golden_age" class="nav-link text-xl">← Previous</a>
+            <a href="/04_testing" class="nav-link text-xl">Next →</a>
+        </div>
+    </div>
+
+    <script>
+        // Simple D3.js visualization showing Rails' impact
+        const svg = d3.select("#rails-visualization");
+        
+        // Create a simple timeline visualization
+        const years = [2004, 2006, 2008, 2010, 2012, 2014];
+        const scale = d3.scaleLinear()
+            .domain([2004, 2014])
+            .range([20, 280]);
+        
+        // Draw timeline line
+        svg.append("line")
+            .attr("x1", 20)
+            .attr("y1", 50)
+            .attr("x2", 280)
+            .attr("y2", 50)
+            .attr("stroke", "#2b6cb0")
+            .attr("stroke-width", 3);
+        
+        // Add year markers
+        years.forEach(year => {
+            svg.append("circle")
+                .attr("cx", scale(year))
+                .attr("cy", 50)
+                .attr("r", 5)
+                .attr("fill", "#e53e3e");
+            
+            svg.append("text")
+                .attr("x", scale(year))
+                .attr("y", 75)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "12")
+                .attr("fill", "#2d3748")
+                .text(year);
+        });
+        
+        // Add labels
+        svg.append("text")
+            .attr("x", 20)
+            .attr("y", 30)
+            .attr("font-size", "14")
+            .attr("fill", "#2b6cb0")
+            .text("Rails Launch");
+            
+        svg.append("text")
+            .attr("x", 280)
+            .attr("y", 30)
+            .attr("text-anchor", "end")
+            .attr("font-size", "14")
+            .attr("fill", "#2b6cb0")
+            .text("Peak Impact");
+    </script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Metaprogramming: Prompt Engineering Before We Had A Word For It</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
+            background-size: 400% 400%;
+            animation: gradientShift 6s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .fox-container {
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .speech-bubble {
+            background: white;
+            border: 3px solid #333;
+            border-radius: 20px;
+            padding: 1rem;
+            position: relative;
+            margin: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border: 15px solid transparent;
+        }
+
+        .fox-left .speech-bubble::after {
+            border-top-color: white;
+            border-right-width: 0;
+            left: 30px;
+            bottom: -15px;
+        }
+
+        .fox-right .speech-bubble::after {
+            border-top-color: white;
+            border-left-width: 0;
+            right: 30px;
+            bottom: -15px;
+        }
+
+        .code-block {
+            background: #1a1a2e;
+            color: #eee;
+            padding: 1rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 0.5rem 0;
+            border: 2px solid #0f3460;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .ruby-keyword { color: #ff6b9d; }
+        .ruby-string { color: #4ecdc4; }
+        .ruby-method { color: #feca57; }
+        .ruby-comment { color: #95a5a6; }
+
+        .intense-shake {
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            75% { transform: translateX(2px); }
+        }
+
+        .fox-emoji {
+            font-size: 2rem;
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-gray-900">
+    <!-- Main slide container -->
+    <div class="w-[80vw] h-[80vh] bg-white/90 rounded-3xl shadow-2xl border-4 border-purple-600 p-8 relative overflow-y-auto">
+        <!-- Ruby logo -->
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="absolute top-4 right-4 w-16 h-16">
+        
+        <!-- Title -->
+        <h1 class="text-4xl font-bold text-center mb-8 text-purple-800">
+            Ruby Metaprogramming:<br>
+            <span class="text-2xl text-pink-600">Prompt Engineering Before We Had A Word For It</span>
+        </h1>
+        
+        <!-- Fox Conversation -->
+        <div class="space-y-6">
+            <!-- Fox 1 starts -->
+            <div class="fox-container fox-left flex items-start">
+                <div class="fox-emoji">🦊</div>
+                <div class="speech-bubble flex-1">
+                    <p class="font-bold text-orange-600">Ruby Fox:</p>
+                    <p>"Dude, check this out! I can literally tell Ruby to define methods on the fly!"</p>
+                    <div class="code-block text-sm mt-2">
+<span class="ruby-keyword">class</span> <span class="ruby-method">DynamicClass</span><br>
+&nbsp;&nbsp;<span class="ruby-keyword">define_method</span>(<span class="ruby-string">"greeting"</span>) <span class="ruby-keyword">do</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="ruby-string">"Hello from dynamic method!"</span><br>
+&nbsp;&nbsp;<span class="ruby-keyword">end</span><br>
+<span class="ruby-keyword">end</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fox 2 responds -->
+            <div class="fox-container fox-right flex items-start justify-end">
+                <div class="speech-bubble flex-1 intense-shake">
+                    <p class="font-bold text-blue-600">Meta Fox:</p>
+                    <p>"WAIT WHAT?! You can just... ASK Ruby to write code FOR you?!"</p>
+                    <div class="code-block text-sm mt-2">
+<span class="ruby-comment"># This is basically:</span><br>
+<span class="ruby-comment"># "Hey Ruby, create a method called 'greeting'"</span><br>
+<span class="ruby-comment"># "Make it return this string"</span><br>
+<span class="ruby-comment"># *RUBY OBEYS*</span>
+                    </div>
+                </div>
+                <div class="fox-emoji">🦊</div>
+            </div>
+
+            <!-- Fox 1 continues -->
+            <div class="fox-container fox-left flex items-start">
+                <div class="fox-emoji">🦊</div>
+                <div class="speech-bubble flex-1">
+                    <p class="font-bold text-orange-600">Ruby Fox:</p>
+                    <p>"RIGHT?! And look at this - I can even make it respond to ANY method name!"</p>
+                    <div class="code-block text-sm mt-2">
+<span class="ruby-keyword">def</span> <span class="ruby-method">method_missing</span>(name, *args)<br>
+&nbsp;&nbsp;<span class="ruby-string">"You called #{name} with #{args.join(', ')}"</span><br>
+<span class="ruby-keyword">end</span><br><br>
+<span class="ruby-comment"># Now ANY method call works!</span><br>
+obj.<span class="ruby-method">totally_made_up_method</span>(<span class="ruby-string">"hello"</span>)
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fox 2 mind blown -->
+            <div class="fox-container fox-right flex items-start justify-end">
+                <div class="speech-bubble flex-1 bg-yellow-100">
+                    <p class="font-bold text-blue-600">Meta Fox:</p>
+                    <p>"🤯 SO YOU'RE TELLING ME... we've been doing PROMPT ENGINEERING since 2003?!"</p>
+                    <p class="mt-2 text-sm italic">"Hey Ruby, if someone calls a method that doesn't exist, just make something up and respond nicely"</p>
+                    <p class="mt-2 font-bold text-red-600">*RUBY: "Got it, boss!" 🫡*</p>
+                </div>
+                <div class="fox-emoji">🦊</div>
+            </div>
+
+            <!-- Final revelation -->
+            <div class="fox-container flex items-center justify-center">
+                <div class="speech-bubble bg-gradient-to-r from-purple-200 to-pink-200 text-center">
+                    <p class="font-bold text-2xl text-purple-800">🦊 BOTH FOXES 🦊</p>
+                    <p class="text-xl mt-2">"We were prompt engineers before ChatGPT was even a twinkle in OpenAI's eye!"</p>
+                    <div class="code-block text-sm mt-4">
+<span class="ruby-comment"># The original prompt engineering:</span><br>
+<span class="ruby-comment"># - Tell the language what you want</span><br>
+<span class="ruby-comment"># - Language figures out how to do it</span><br>
+<span class="ruby-comment"># - Magic happens ✨</span><br><br>
+<span class="ruby-string">"Ruby metaprogramming == Prompt engineering 1.0"</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation (placeholder - no specific links provided) -->
+    <div class="fixed left-8 top-1/2 transform -translate-y-1/2">
+        <!-- Previous link would go here if specified -->
+    </div>
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2">
+        <!-- Next link would go here if specified -->
+    </div>
+</body>
+</html>

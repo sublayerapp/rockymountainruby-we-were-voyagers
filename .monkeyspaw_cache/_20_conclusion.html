@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The End!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background:
+                radial-gradient(circle at 20% 20%, #ff00ff 2px, transparent 2px),
+                radial-gradient(circle at 80% 80%, #00ffff 2px, transparent 2px),
+                radial-gradient(circle at 40% 60%, #ffff00 1px, transparent 1px),
+                linear-gradient(45deg, #000080 25%, transparent 25%),
+                linear-gradient(-45deg, #800080 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #008080 75%),
+                linear-gradient(-45deg, transparent 75%, #ff4500 75%);
+            background-size: 50px 50px, 60px 60px, 30px 30px, 20px 20px, 20px 20px, 20px 20px, 20px 20px;
+            background-position: 0 0, 25px 25px, 10px 10px, 0 0, 10px 0, 0 10px, 10px 10px;
+            background-color: #001122;
+        }
+
+        .font-weird {
+            font-family: 'Creepster', cursive;
+        }
+
+        .font-comic {
+            font-family: 'Comic Neue', cursive;
+        }
+
+        .quote-text {
+            color: #00ffff;
+            text-shadow: 2px 2px 4px #ff00ff;
+        }
+
+        .contact-text {
+            color: #ffff00;
+            text-shadow: 1px 1px 2px #ff00ff;
+        }
+
+        .nav-link {
+            color: #00ff00;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .nav-link:hover {
+            color: #ffff00;
+            text-decoration: underline;
+        }
+
+        .gif-container {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center font-comic">
+    <!-- Navigation -->
+    <div class="fixed left-8 top-1/2 transform -translate-y-1/2 z-10">
+        <a href="/19_live_demo" class="nav-link text-2xl font-bold">Previous</a>
+    </div>
+
+    <!-- Main slide container -->
+    <div class="w-[80vw] h-[80vh] bg-black bg-opacity-80 border-4 border-cyan-400 rounded-lg shadow-2xl relative overflow-hidden">
+        <!-- Artificial Ruby Logo -->
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="absolute top-4 right-4 w-16 h-16 z-20">
+
+        <!-- Main content area -->
+        <div class="h-full p-8 flex">
+            <!-- Left side - Quote -->
+            <div class="w-1/2 pr-8 flex flex-col justify-center">
+                <h1 class="font-weird text-6xl quote-text mb-8 text-center">The End!</h1>
+
+                <div class="quote-text text-lg leading-relaxed space-y-2 font-bold">
+                    <p>We were voyagers.</p>
+                    <p>We discovered continents of possibility.</p>
+                    <p>We got comfortable.</p>
+                    <p>We drew maps.</p>
+                    <p>We settled down.</p>
+                    <p>But the universe got weird again.</p>
+                    <p class="text-yellow-300">The machines learned to dream.</p>
+                </div>
+
+                <div class="mt-8 quote-text text-lg leading-relaxed space-y-2 font-bold">
+                    <p class="text-pink-300">Write code that makes you giggle.</p>
+                    <p class="text-green-300">Create tools that shouldn't exist.</p>
+                    <p>The voyage never ended.</p>
+                    <p class="text-2xl text-yellow-300">Welcome back, voyagers.</p>
+                    <p class="text-xl text-cyan-300">The sea is infinite again.</p>
+                </div>
+            </div>
+
+            <!-- Right side - GIF and Contact Info -->
+            <div class="w-1/2 pl-8 flex flex-col">
+                <!-- GIF at top -->
+                <div class="gif-container mb-8">
+                    <img src="assets/we_were_voyagers.gif" alt="We Were Voyagers" class="w-full rounded-lg border-2 border-purple-400">
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-text text-xl space-y-3 font-bold">
+                    <p class="text-2xl text-pink-400 mb-6">Scott Werner</p>
+                    <p>website: <a href="https://sublayer.com" class="text-cyan-300 hover:text-yellow-300 underline">https://sublayer.com</a></p>
+                    <p>Writing: <a href="https://worksonmymachine.ai" class="text-cyan-300 hover:text-yellow-300 underline">https://worksonmymachine.ai</a></p>
+                    <p>email: <a href="mailto:scott@sublayer.com" class="text-cyan-300 hover:text-yellow-300 underline">scott@sublayer.com</a></p>
+                    <p>Twitter: <a href="https://twitter.com/scottwernerd" class="text-cyan-300 hover:text-yellow-300 underline">@scottwernerd</a></p>
+                    <p>Monkey's Paw: <a href="https://github.com/sublayerapp/monkeyspaw" class="text-cyan-300 hover:text-yellow-300 underline">https://github.com/sublayerapp/monkeyspaw</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

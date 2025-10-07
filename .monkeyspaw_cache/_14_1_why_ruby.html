@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Ruby?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff0080);
+            background-size: 400% 400%;
+            animation: rainbow 15s ease infinite;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .geocities-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, #ffffff22 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #ffffff22 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+        }
+        
+        .slide-container {
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid #00ff00;
+            box-shadow: 0 0 20px #00ff00, inset 0 0 20px rgba(0, 255, 0, 0.1);
+        }
+        
+        .neon-text {
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+        }
+        
+        .cyber-text {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff;
+        }
+        
+        .nav-link {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 15px #ff00ff, 0 0 25px #ff00ff;
+            transform: scale(1.1);
+        }
+        
+        .triumphant-glow {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse-glow {
+            from { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; }
+            to { text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00, 0 0 45px #00ff00, 0 0 60px #00ff00; }
+        }
+    </style>
+</head>
+<body class="min-h-screen geocities-pattern flex items-center justify-center">
+    <!-- Navigation Links -->
+    <div class="fixed left-8 top-1/2 transform -translate-y-1/2 z-10">
+        <a href="/13_the_opportunity" class="nav-link text-xl font-bold block hover:underline">
+            Previous
+        </a>
+    </div>
+    
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-10">
+        <a href="/14_2_why_ruby" class="nav-link text-xl font-bold block hover:underline">
+            Next
+        </a>
+    </div>
+
+    <!-- Main Slide Container -->
+    <div class="w-[80vw] h-[80vh] slide-container rounded-lg p-8 flex flex-col items-center justify-center relative">
+        <!-- Ruby Logo -->
+        <div class="absolute top-4 right-4">
+            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="w-16 h-16 opacity-80">
+        </div>
+        
+        <!-- Slide Content -->
+        <div class="text-center space-y-8 max-w-4xl">
+            <!-- Title -->
+            <h1 class="text-5xl font-black neon-text triumphant-glow mb-12">
+                Why Ruby?
+            </h1>
+            
+            <!-- Main Content -->
+            <div class="space-y-8">
+                <div class="text-2xl cyber-text font-bold leading-relaxed">
+                    Ruby never forgot how to play, we just stopped<br>
+                    for a bit.
+                </div>
+                
+                <div class="text-xl text-yellow-400 font-semibold leading-relaxed">
+                    DSL's are basically prompts already, <span class="neon-text">Executable prompts!</span>
+                </div>
+                
+                <div class="text-lg text-white leading-relaxed max-w-3xl mx-auto">
+                    Not just porting over python and javascript libraries, but things like this
+                    presentation, that draw from Ruby's <span class="text-pink-400 font-bold">hidden third influence</span>
+                </div>
+            </div>
+            
+            <!-- Decorative Elements -->
+            <div class="flex justify-center space-x-8 mt-12">
+                <div class="w-4 h-4 bg-red-500 animate-bounce"></div>
+                <div class="w-4 h-4 bg-green-500 animate-bounce" style="animation-delay: 0.1s;"></div>
+                <div class="w-4 h-4 bg-blue-500 animate-bounce" style="animation-delay: 0.2s;"></div>
+                <div class="w-4 h-4 bg-yellow-500 animate-bounce" style="animation-delay: 0.3s;"></div>
+                <div class="w-4 h-4 bg-pink-500 animate-bounce" style="animation-delay: 0.4s;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.style.position = 'fixed';
+            sparkle.style.width = '4px';
+            sparkle.style.height = '4px';
+            sparkle.style.backgroundColor = '#ffffff';
+            sparkle.style.borderRadius = '50%';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.animation = 'sparkle 2s linear forwards';
+            sparkle.style.zIndex = '5';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 2000);
+        }
+        
+        // CSS for sparkle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkle {
+                0% { opacity: 0; transform: scale(0) rotate(0deg); }
+                50% { opacity: 1; transform: scale(1) rotate(180deg); }
+                100% { opacity: 0; transform: scale(0) rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Create sparkles periodically
+        setInterval(createSparkle, 300);
+    </script>
+</body>
+</html>

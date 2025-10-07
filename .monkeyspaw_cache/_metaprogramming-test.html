@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruby Metaprogramming: Prompt Engineering Before It Was Cool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Creepster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff00ff 25%, transparent 25%, transparent 75%, #ff00ff 75%, #ff00ff),
+                        linear-gradient(-45deg, #00ffff 25%, transparent 25%, transparent 75%, #00ffff 75%, #00ffff);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-color: #000080;
+            font-family: 'Comic Neue', cursive;
+            color: #ffff00;
+            animation: backgroundShift 10s infinite;
+        }
+        
+        @keyframes backgroundShift {
+            0%, 100% { background-position: 0 0, 15px 15px; }
+            50% { background-position: 15px 15px, 0 0; }
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .speech-bubble {
+            position: relative;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 10px;
+            color: #000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .speech-bubble:before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 30px;
+            width: 0;
+            height: 0;
+            border: 20px solid transparent;
+            border-top-color: #ffffff;
+            border-bottom: 0;
+        }
+        
+        .speech-bubble.right:before {
+            right: 30px;
+            left: auto;
+        }
+        
+        .tortoise-bubble {
+            background: #90EE90;
+        }
+        
+        .tortoise-bubble:before {
+            border-top-color: #90EE90;
+        }
+        
+        .hare-bubble {
+            background: #FFB6C1;
+        }
+        
+        .hare-bubble:before {
+            border-top-color: #FFB6C1;
+        }
+        
+        .code-block {
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            border: 2px solid #00ff00;
+        }
+        
+        .character {
+            font-size: 4rem;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="w-[80vw] h-[80vh] bg-black bg-opacity-80 border-4 border-yellow-400 rounded-lg shadow-2xl flex flex-col p-6 relative overflow-auto">
+        <!-- Logo -->
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="absolute top-4 right-4 w-16 h-16 z-10">
+        
+        <!-- Title -->
+        <h1 class="text-4xl font-bold text-center mb-6 text-yellow-400 font-['Creepster'] blink">
+            Ruby's Metaprogramming: Prompt Engineering Before We Had a Word for It!
+        </h1>
+        
+        <!-- Conversation Container -->
+        <div class="flex-1 overflow-y-auto">
+            <!-- Round 1: Tortoise starts -->
+            <div class="flex items-end mb-4">
+                <div class="character">🐢</div>
+                <div class="speech-bubble tortoise-bubble flex-1">
+                    <strong>Tortoise:</strong> "Hare, my speedy friend, have you ever considered how Ruby's metaprogramming is essentially prompt engineering?"
+                </div>
+            </div>
+            
+            <!-- Round 2: Hare responds -->
+            <div class="flex items-end mb-4 flex-row-reverse">
+                <div class="character">🐰</div>
+                <div class="speech-bubble hare-bubble right flex-1">
+                    <strong>Hare:</strong> "That's absurd, Tortoise! Metaprogramming is about writing code that writes code. Prompt engineering is about crafting inputs for AI!"
+                </div>
+            </div>
+            
+            <!-- Round 3: Tortoise with code -->
+            <div class="flex items-start mb-4">
+                <div class="character">🐢</div>
+                <div class="speech-bubble tortoise-bubble flex-1">
+                    <strong>Tortoise:</strong> "Ah, but look at this Ruby magic!"
+                    <div class="code-block">
+class DynamicMethods
+  def self.create_method(name, behavior)
+    define_method(name) do |*args|
+      # The 'prompt' tells Ruby what to do
+      case behavior
+      when :greet
+        "Hello, #{args.first}!"
+      when :calculate
+        args.sum
+      end
+    end
+  end
+end
+
+# 'Prompting' Ruby to create methods
+DynamicMethods.create_method(:say_hello, :greet)
+DynamicMethods.create_method(:add_numbers, :calculate)
+                    </div>
+                    "See? We're giving Ruby 'prompts' about what kind of methods to create!"
+                </div>
+            </div>
+            
+            <!-- Round 4: Hare getting interested -->
+            <div class="flex items-start mb-4 flex-row-reverse">
+                <div class="character">🐰</div>
+                <div class="speech-bubble hare-bubble right flex-1">
+                    <strong>Hare:</strong> "Wait... you're telling Ruby WHAT you want, not exactly HOW to do it. That's... that's actually similar to prompting!"
+                    <div class="code-block">
+# Traditional way (telling Ruby HOW)
+def create_greeting_method
+  def greet(name)
+    "Hello, #{name}!"
+  end
+end
+
+# Metaprogramming way (telling Ruby WHAT)
+define_method(:greet) do |name|
+  "Hello, #{name}!"
+end
+
+# Prompt engineering way (telling AI WHAT)
+# "Create a greeting function that says hello to a person"
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Round 5: Tortoise drives the point home -->
+            <div class="flex items-start mb-4">
+                <div class="character">🐢</div>
+                <div class="speech-bubble tortoise-bubble flex-1">
+                    <strong>Tortoise:</strong> "Exactly! In both cases, we describe the INTENT, and the system figures out the implementation!"
+                    <div class="code-block">
+# Ruby metaprogramming: Describing intent to Ruby
+attr_accessor :name  # "Please create getter and setter methods"
+has_many :posts     # "Please create association methods"
+
+# Modern prompt engineering: Describing intent to AI
+# "Create a user class with name attribute and posts association"
+
+# Both abstract away the implementation details!
+                    </div>
+                    "Ruby developers were prompt engineers before 'prompt engineering' was even a term!"
+                </div>
+            </div>
+            
+            <!-- Round 6: Hare concedes -->
+            <div class="flex items-end mb-4 flex-row-reverse">
+                <div class="character">🐰</div>
+                <div class="speech-bubble hare-bubble right flex-1">
+                    <strong>Hare:</strong> "You know what, Tortoise? You've convinced me. Ruby's <code>method_missing</code>, <code>define_method</code>, and DSLs are all about declarative intent rather than imperative instruction. We were prompting Ruby decades before we started prompting ChatGPT!"
+                </div>
+            </div>
+            
+            <!-- Final wisdom -->
+            <div class="text-center mt-6 text-yellow-400 text-xl font-bold blink">
+                🎭 THE MORAL: Sometimes the old ways of thinking contain the seeds of the new! 🎭
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation (placeholder positions) -->
+    <div class="absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-400 text-xl font-bold">
+        <!-- Previous link would go here if specified -->
+    </div>
+    <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-yellow-400 text-xl font-bold">
+        <!-- Next link would go here if specified -->
+    </div>
+</body>
+</html>

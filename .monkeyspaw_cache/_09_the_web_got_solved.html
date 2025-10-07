@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web 2.0 Got Solved</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Creepster&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24, #f0932b, #eb4d4b, #6c5ce7, #a29bfe);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 0, 0.3) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.3) 3px, transparent 3px),
+                radial-gradient(circle at 60% 20%, rgba(0, 255, 255, 0.3) 2px, transparent 2px),
+                radial-gradient(circle at 30% 80%, rgba(255, 105, 180, 0.3) 2px, transparent 2px);
+            background-size: 100px 100px, 150px 150px, 120px 120px, 80px 80px;
+            animation: sparkle 4s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        .slide-container {
+            background: rgba(255, 255, 255, 0.95);
+            border: 4px solid #ff6b6b;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-link {
+            color: #eb4d4b;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #ff6b6b;
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-gray-800">
+    <!-- Navigation -->
+    <div class="fixed left-8 top-1/2 transform -translate-y-1/2 z-10">
+        <a href="/08_growing_up" class="nav-link text-2xl">Previous</a>
+    </div>
+    
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-10">
+        <a href="/10_the_spark_dims" class="nav-link text-2xl">Next</a>
+    </div>
+
+    <!-- Main Slide Container -->
+    <div class="slide-container w-[80vw] h-[80vh] p-8 flex flex-col items-center justify-center relative">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="w-16 h-16">
+        </div>
+
+        <!-- Slide Content -->
+        <div class="flex flex-col items-center justify-center text-center space-y-12 max-w-4xl">
+            <!-- Title -->
+            <h1 class="text-5xl font-bold text-purple-700 mb-8" style="font-family: 'Creepster', cursive;">Web 2.0 Got Solved</h1>
+            
+            <!-- Major Bullet Points -->
+            <div class="space-y-8">
+                <!-- Largest Bullet -->
+                <div class="text-4xl font-bold text-red-600 leading-relaxed">
+                    CRUD apps everywhere, the same patterns refined to death...
+                </div>
+                
+                <!-- Slightly Less Large Bullet -->
+                <div class="text-3xl font-semibold text-blue-600 leading-relaxed">
+                    We found all the edges of Web 2.0 and started painting inside the lines
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

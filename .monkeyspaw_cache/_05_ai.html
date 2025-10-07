@@ -3,88 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI: A New Ocean for Our Canoe</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>AI Reignites Spark</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
+            background-color: #0F172A; /* Example dark background */
+            color: #CBD5E1; /* Example light text color */
             font-family: 'Roboto', sans-serif;
-            background-color: #0E2433; /* example background color */
-            color: #CBD5E0; /* example text color */
             margin: 0;
             height: 100vh;
             overflow: hidden;
         }
 
-        .slide-container {
+        .container {
             width: 80vw;
             height: 80vh;
-            border: 1px solid #475569; /* example border color */
+            border: 1px solid #475569; /* Example border color */
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 1rem;
-            box-sizing: border-box;
         
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         .content-area {
             flex-grow: 1;
             width: 100%;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 1rem;
-            text-align: center;
         }
 
-        .navigation-area {
+        .navigation {
             width: 100%;
             display: flex;
             justify-content: space-between;
-        }
-
-        .navigation-link {
-            color: #818CF8; /* example accent/link color */
-            text-decoration: none;
             padding: 0.5rem;
         }
 
-        .navigation-link:hover {
+        .navigation a {
+            color: #818CF8; /* Example accent color */
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+        }
+
+        .navigation a:hover {
             text-decoration: underline;
         }
 
-        h1 {
-            color: #94A3B8;
+        h1, h2 {
+            color: #94A3B8; /* Example heading color */
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
 
-
+        .slide-text {
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+        
+        #ruby-logo {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 50px;
+          height: auto;
+        }
+        
+        .absolute-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
-<body>
-    <div class="slide-container">
-      <div class="w-full flex justify-end">
-        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" style="width: 50px; height: auto;">
-      </div>
+<body class="flex justify-center items-center h-screen">
+
+    <div class="container relative">
+       <img id="ruby-logo" src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo">
         <div class="content-area">
-            <h1 class="text-4xl font-bold mb-4 text-center">AI: A New Ocean for Our Canoe</h1>
-            <ul class="list-disc text-xl leading-relaxed">
-                <li>AI needs more than just Python: new interfaces, rapid prototypes, creative approaches.</li>
-                <li>Ruby's expressiveness, history of DSLs, and DIY spirit are perfectly suited for this!</li>
-            </ul>
+            <div class="absolute-center">
+              <p class="slide-text">AI can reignite that spark</p>
+            </div>
         </div>
-        <div class="navigation-area">
-            <a href="/04_still_a_spark" class="navigation-link">Prev</a>
-            <a href="/06_artificial_ruby" class="navigation-link">Next</a>
+
+        <div class="navigation">
+            <a href="/04_still_a_spark">Prev</a>
+            <a href="/06_artificial_ruby">Next</a>
         </div>
     </div>
+
 </body>
 </html>

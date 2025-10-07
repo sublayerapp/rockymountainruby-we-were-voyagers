@@ -5,93 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artificial Ruby</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         body {
-            background-color: #f0f0f0; /* Example background color */
-            color: #333; /* Example text color */
-            font-family: 'Roboto', sans-serif;
+            background-color: #991b1b; /* Rough ruby color */
+            color: #f3f4f6; /* Default text color */
+            font-family: sans-serif;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        .slide-container {
+        #container {
             width: 80vw;
             height: 80vh;
-            border: 1px solid #ccc;
+            border: 1px solid #6b7280; /* Adjust border color as needed */
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            padding: 1rem;
-            box-sizing: border-box;
+            margin: 0 auto;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            padding: 1rem;
+            background-color: white; /* Slide color white */
+            color: #1f2937; /* dark accent colors */
         }
 
-        .content-area {
+        #slide-content {
             flex-grow: 1;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 0 1rem;
+            padding: 1rem;
         }
 
-        .navigation-area {
+        #navigation {
             width: 100%;
-            padding: 0.5rem 0;
             display: flex;
             justify-content: space-between;
+            padding: 1rem;
         }
 
-        .navigation-area a {
-            color: #007bff; /* Example link color */
+        .nav-link {
+            color: #0ea5e9; /* Accent/Link color */
             text-decoration: none;
-            padding: 0.25rem 0.5rem;
+            font-size: 1.25rem;
+            padding: 0.5rem 1rem;
             border-radius: 0.25rem;
         }
 
-        .navigation-area a:hover {
+        .nav-link:hover {
             text-decoration: underline;
         }
 
-        h1, h2 {
-            color: #2d3748; /* Heading Text color */
-            margin-bottom: 0.5rem;
+        /* Custom styles based on the description */
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937; /* dark accent colors */
         }
 
-        /* Example pattern, adjust to match the vibe */
-        body {
-            background-image: linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd),
-            linear-gradient(45deg, #ddd 25%, transparent 25%, transparent 75%, #ddd 75%, #ddd);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
+        h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #1f2937; /* dark accent colors */
+        }
+
+        h4 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937; /* dark accent colors */
+        }
+
+        .pull-quote {
+            width: 40%;
+            text-align: center;
+            font-size: 2rem;
+            margin: 2rem auto;
+        }
+
+        .side-by-side {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .side {
+            width: 30%;
+        }
+
+        img.logo {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          width: 50px;
+          height: auto;
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="slide-container">
-        <div style="position: absolute; top: 10px; right: 10px;">
-            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" style="width: 50px; height: auto;">
-        </div>
-
-        <div class="content-area">
+<body>
+    <div id="container">
+      <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="logo">
+        <div id="slide-content">
             <h1 class="text-4xl font-bold mb-4">Artificial Ruby</h1>
-
-            <ul>
-                <li class="text-xl leading-relaxed">Our mission: Foster both sides.</li>
-                <li class="text-xl leading-relaxed">1. Share the essential practical tools (like we heard earlier!) that keep Ruby relevant.</li>
-                <li class="text-xl leading-relaxed">2. AND be the space to encourage and celebrate creative exploration & experimentation.</li>
-            </ul>
+            <h2 class="text-3xl font-bold mb-4">Our mission: Bring that spark back with AI</h2>
+            <div class="pull-quote text-xl">
+                Create a platform for Rubyists to share both the practical and kind of silly
+            </div>
+            <div class="side-by-side">
+                <div class="side">
+                    <h4 class="text-xl font-bold">Share techniques, learnings, and essential practical tools that keep Ruby relevant.</h4>
+                </div>
+                <div class="side">
+                    <h4 class="text-xl font-bold">AND be the space to encourage and celebrate creative exploration & experimentation.</h4>
+                </div>
+            </div>
         </div>
-
-        <div class="navigation-area">
-            <a href="/05_ai">Prev</a>
-            <a href="/07_call_for_speakers">Next</a>
+        <div id="navigation">
+            <a href="/05_ai" class="nav-link">&lt; Previous</a>
+            <a href="/07_call_for_speakers" class="nav-link">Next &gt;</a>
         </div>
     </div>
 </body>

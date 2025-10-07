@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonkeysPaw: Wish-Driven Development for Ruby</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Eater:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #2d1b69, #8b5a2b);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            font-family: 'Eater', cursive;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #ffd700 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #ff6b6b 1px, transparent 1px);
+            background-size: 50px 50px, 30px 30px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .heading-font { font-family: 'Creepster', cursive; }
+        .spooky-font { font-family: 'Nosifer', cursive; }
+        
+        .monkey-paw {
+            transform: rotate(-15deg);
+            transition: all 0.3s ease;
+        }
+        
+        .monkey-paw:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        
+        .testimonial-card {
+            background: rgba(139, 69, 19, 0.2);
+            border: 2px solid #8b5a2b;
+            backdrop-filter: blur(5px);
+        }
+        
+        .feature-card {
+            background: rgba(45, 27, 105, 0.3);
+            border: 2px solid #2d1b69;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="text-yellow-300 overflow-x-hidden">
+    <!-- Navigation -->
+    <div class="fixed left-4 top-1/2 transform -translate-y-1/2 z-50">
+        <a href="17_monkeys_paw" class="text-yellow-300 hover:text-yellow-100 text-lg font-bold hover:underline">Previous</a>
+    </div>
+    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 z-50">
+        <a href="18_2_monkeyspaw_javascript" class="text-yellow-300 hover:text-yellow-100 text-lg font-bold hover:underline">Next</a>
+    </div>
+
+    <!-- Ruby Logo -->
+    <div class="fixed top-4 right-4 z-50">
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="w-16 h-16">
+    </div>
+
+    <!-- Main Container -->
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="w-[80vw] h-[80vh] border-4 border-yellow-400 bg-black bg-opacity-50 backdrop-blur-sm rounded-lg shadow-2xl overflow-hidden">
+            
+            <!-- Split Screen Layout -->
+            <div class="flex h-full">
+                
+                <!-- Left Side: Example Prompt Text -->
+                <div class="w-1/2 h-full border-r-2 border-yellow-400 p-6 overflow-y-auto">
+                    <div class="text-lg font-mono text-green-400 leading-relaxed">
+                        <h1 class="text-2xl font-bold mb-4 text-yellow-300"># MonkeysPaw Home Page</h1>
+                        
+                        <h2 class="text-xl font-bold mb-3 text-yellow-200">## Page Content</h2>
+                        
+                        <p class="mb-4">Create a dramatic, visually striking home page for the MonkeysPaw Ruby gem that introduces the concept of "wish-driven development." The page should convey both the power and the potential danger of using the framework.</p>
+                        
+                        <h3 class="text-lg font-bold mb-2 text-yellow-200">### Hero Section</h3>
+                        <ul class="list-disc list-inside mb-4 space-y-1 text-sm">
+                            <li>Large, dramatic headline: "MonkeysPaw 🐒✋"</li>
+                            <li>Tagline: "Wish-Driven Development for Ruby"</li>
+                            <li>Dramatic subtitle: "Be careful what you wish for..."</li>
+                            <li>Brief 2-3 sentence explanation: "A prompt-driven web framework that grants your web development wishes through AI. Like the legendary monkey's paw, it will fulfill your requests exactly as stated—for better or worse."</li>
+                            <li>Call-to-action button: "Make Your First Wish" (links to Getting Started)</li>
+                        </ul>
+                        
+                        <h3 class="text-lg font-bold mb-2 text-yellow-200">### Key Features Section</h3>
+                        <ul class="list-disc list-inside mb-4 space-y-1 text-sm">
+                            <li>Title: "The Power of the Paw"</li>
+                            <li>3 feature cards with icons:
+                                <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
+                                    <li><strong>Prompt-Driven</strong>: "Express your intentions through natural language, not code"</li>
+                                    <li><strong>AI-Powered</strong>: "Harness advanced language models to generate complete web pages"</li>
+                                    <li><strong>Eerily Accurate</strong>: "Get precisely what you ask for—exactly as you phrase it"</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                        <h3 class="text-lg font-bold mb-2 text-yellow-200">### How It Works Section</h3>
+                        <p class="mb-2 text-sm">Simple 3-step graphic showing:</p>
+                        <ol class="list-decimal list-inside mb-3 space-y-1 text-sm">
+                            <li>Write your wish (prompt)</li>
+                            <li>The paw curls (processing)</li>
+                            <li>Your page manifests (result)</li>
+                        </ol>
+                        
+                        <div class="mb-4 p-3 bg-gray-800 rounded text-sm">
+                            <code class="text-green-300">
+require 'monkeyspaw'<br><br>
+# Make your wish come true<br>
+MonkeysPaw.pick_up!
+                            </code>
+                        </div>
+                        
+                        <h3 class="text-lg font-bold mb-2 text-yellow-200">### Testimonials Section</h3>
+                        <p class="mb-2 text-sm">Title: "Tales of Granted Wishes"</p>
+                        <p class="text-sm">3-4 fictional but amusing testimonials that hint at both success and unexpected consequences...</p>
+                    </div>
+                </div>
+                
+                <!-- Right Side: MonkeysPaw Rendered Page -->
+                <div class="w-1/2 h-full overflow-y-auto bg-gradient-to-br from-gray-900 via-red-900 to-black">
+                    
+                    <!-- Hero Section -->
+                    <div class="text-center py-12 px-8">
+                        <h1 class="heading-font text-6xl text-red-500 mb-4 drop-shadow-lg monkey-paw">
+                            MonkeysPaw 🐒✋
+                        </h1>
+                        <p class="spooky-font text-2xl text-yellow-300 mb-2">Wish-Driven Development for Ruby</p>
+                        <p class="text-red-300 text-lg mb-6 italic">Be careful what you wish for...</p>
+                        <p class="text-gray-300 mb-8 max-w-md mx-auto leading-relaxed">
+                            A prompt-driven web framework that grants your web development wishes through AI. Like the legendary monkey's paw, it will fulfill your requests exactly as stated—for better or worse.
+                        </p>
+                        <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all">
+                            Make Your First Wish
+                        </button>
+                    </div>
+                    
+                    <!-- Key Features Section -->
+                    <div class="px-8 py-8">
+                        <h2 class="spooky-font text-3xl text-center text-yellow-300 mb-8">The Power of the Paw</h2>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="feature-card p-4 rounded-lg">
+                                <h3 class="text-yellow-300 font-bold text-lg mb-2">🎯 Prompt-Driven</h3>
+                                <p class="text-gray-300 text-sm">Express your intentions through natural language, not code</p>
+                                <p class="text-red-400 text-xs mt-2 italic">*Precision in wording recommended</p>
+                            </div>
+                            <div class="feature-card p-4 rounded-lg">
+                                <h3 class="text-yellow-300 font-bold text-lg mb-2">🤖 AI-Powered</h3>
+                                <p class="text-gray-300 text-sm">Harness advanced language models to generate complete web pages</p>
+                                <p class="text-red-400 text-xs mt-2 italic">*Results may exceed expectations</p>
+                            </div>
+                            <div class="feature-card p-4 rounded-lg">
+                                <h3 class="text-yellow-300 font-bold text-lg mb-2">🎯 Eerily Accurate</h3>
+                                <p class="text-gray-300 text-sm">Get precisely what you ask for—exactly as you phrase it</p>
+                                <p class="text-red-400 text-xs mt-2 italic">*Monkey's paw rules apply</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- How It Works -->
+                    <div class="px-8 py-6">
+                        <div class="flex justify-around items-center text-center">
+                            <div>
+                                <div class="text-4xl mb-2">📝</div>
+                                <p class="text-yellow-300 text-sm">Write Wish</p>
+                            </div>
+                            <div class="text-red-500 text-2xl">→</div>
+                            <div>
+                                <div class="text-4xl mb-2">🐾</div>
+                                <p class="text-yellow-300 text-sm">Paw Curls</p>
+                            </div>
+                            <div class="text-red-500 text-2xl">→</div>
+                            <div>
+                                <div class="text-4xl mb-2">✨</div>
+                                <p class="text-yellow-300 text-sm">Page Manifests</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 p-3 bg-black bg-opacity-70 rounded font-mono text-sm">
+                            <code class="text-green-400">
+require 'monkeyspaw'<br><br>
+# Make your wish come true<br>
+MonkeysPaw.pick_up!
+                            </code>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonials -->
+                    <div class="px-8 py-6">
+                        <h2 class="spooky-font text-2xl text-center text-yellow-300 mb-6">Tales of Granted Wishes</h2>
+                        <div class="space-y-3">
+                            <div class="testimonial-card p-3 rounded text-sm">
+                                <p class="text-gray-300">"I wished for a contact form and got exactly that—though I forgot to ask for form validation. Be specific!"</p>
+                                <p class="text-yellow-400 text-xs mt-1">— Ruby Developer</p>
+                            </div>
+                            <div class="testimonial-card p-3 rounded text-sm">
+                                <p class="text-gray-300">"Asked for an 'eye-catching' header and now visitors can't look away... literally."</p>
+                                <p class="text-yellow-400 text-xs mt-1">— Web Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Final CTA -->
+                    <div class="text-center py-6 px-8">
+                        <button class="bg-yellow-600 hover:bg-yellow-700 text-black font-bold py-2 px-6 rounded shadow-lg">
+                            Learn to Make Careful Wishes
+                        </button>
+                        <p class="text-red-400 text-xs mt-2">Remember: With great power comes the responsibility to be precise.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>And the spark dimmed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background-size: 400% 400%;
+            animation: rainbow 4s ease infinite;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .slide-container {
+            background: #000080;
+            color: #00ff00;
+            border: 3px solid #ff00ff;
+            box-shadow: 0 0 20px #00ffff;
+        }
+        
+        .survey-text {
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .survey-text.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .nav-link {
+            color: #ffff00;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #ffff00;
+            background: #800080;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #ffff00;
+            color: #800080;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+    <!-- Navigation Links -->
+    <div class="fixed left-4 top-1/2 transform -translate-y-1/2 z-20">
+        <a href="/09_the_web_got_solved" class="nav-link block text-lg font-bold">
+            Previous
+        </a>
+    </div>
+    
+    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 z-20">
+        <a href="/11_but_the_spark_is_not_gone" class="nav-link block text-lg font-bold">
+            Next
+        </a>
+    </div>
+
+    <!-- Main Slide Container -->
+    <div class="slide-container w-[80vw] h-[80vh] flex flex-col justify-center items-center p-8 relative overflow-hidden">
+        <!-- Logo in top right -->
+        <div class="absolute top-4 right-4">
+            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="w-16 h-16">
+        </div>
+        
+        <!-- Main Content -->
+        <div class="text-center space-y-8 flex-1 flex flex-col justify-center items-center max-w-4xl">
+            <h1 class="text-5xl font-bold text-yellow-300 mb-6">And the spark dimmed</h1>
+            
+            <div class="text-xl text-green-400 leading-relaxed space-y-4">
+                <p>We stopped making programming toys, we stopped making experimental frameworks just for the joy of coding.</p>
+            </div>
+            
+            <div class="mt-12">
+                <button id="surveyBtn" class="bg-purple-600 text-yellow-300 px-8 py-4 text-2xl font-bold border-4 border-yellow-300 hover:bg-yellow-300 hover:text-purple-600 transition-all duration-300 cursor-pointer">
+                    Survey!
+                </button>
+                
+                <div id="surveyText" class="survey-text mt-8 text-2xl text-cyan-400 font-bold max-w-3xl mx-auto">
+                    Raise your hand if you've never heard of Why the Lucky Stiff or don't know the history of Camping and Sinatra?
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('surveyBtn').addEventListener('click', function() {
+            const surveyText = document.getElementById('surveyText');
+            surveyText.classList.add('visible');
+        });
+    </script>
+</body>
+</html>

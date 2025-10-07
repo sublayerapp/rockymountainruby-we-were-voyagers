@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout and Styles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #000080;
+            background-image: 
+                radial-gradient(circle at 25% 25%, #FF00FF 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, #00FFFF 2px, transparent 2px),
+                repeating-linear-gradient(45deg, #FF0000 0px, #FF0000 2px, transparent 2px, transparent 10px),
+                repeating-linear-gradient(-45deg, #FFFF00 0px, #FFFF00 1px, transparent 1px, transparent 8px);
+            background-size: 50px 50px, 50px 50px, 20px 20px, 20px 20px;
+            color: #FFFFFF;
+            font-family: 'Nosifer', serif;
+        }
+        
+        .slide-container {
+            border: 3px solid #FF00FF;
+            box-shadow: 0 0 20px #00FFFF;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .nav-link {
+            color: #00FFFF;
+            text-shadow: 2px 2px 4px #FF00FF;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .nav-link:hover {
+            color: #FFFF00;
+            text-decoration: underline;
+        }
+        
+        h1, h2 {
+            color: #FF00FF;
+            text-shadow: 2px 2px 4px #00FFFF;
+            font-family: 'Creepster', serif;
+        }
+        
+        .column {
+            flex: 1;
+            padding: 0 1rem;
+        }
+        
+        .column img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #00FFFF;
+            box-shadow: 0 0 10px #FF00FF;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 80px;
+            height: auto;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <!-- Navigation Previous -->
+    <div class="fixed left-4 top-1/2 transform -translate-y-1/2 z-20">
+        <a href="18_2_monkeyspaw_javascript" class="nav-link">Previous</a>
+    </div>
+    
+    <!-- Main Slide Container -->
+    <div class="slide-container w-[80vw] h-[80vh] relative p-8 rounded-lg flex flex-col">
+        <!-- Logo -->
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="logo">
+        
+        <!-- Main Content Area -->
+        <div class="flex-1 flex flex-col items-center justify-center">
+            <!-- Title -->
+            <h1 class="text-4xl font-bold mb-8 text-center">Layout and Styles</h1>
+            
+            <!-- Two Column Layout -->
+            <div class="flex w-full h-full max-h-96 gap-8">
+                <!-- Left Column -->
+                <div class="column flex flex-col items-center">
+                    <h2 class="text-2xl font-bold mb-4">Layout</h2>
+                    <img src="assets/monkeyspaw_layout.png" alt="Monkey's Paw Layout" class="rounded-lg">
+                </div>
+                
+                <!-- Right Column -->
+                <div class="column flex flex-col items-center">
+                    <h2 class="text-2xl font-bold mb-4">Styles</h2>
+                    <img src="assets/monkeyspaw_styles.png" alt="Monkey's Paw Styles" class="rounded-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Next -->
+    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 z-20">
+        <a href="19_live_demo" class="nav-link">Next</a>
+    </div>
+</body>
+</html>

@@ -4,49 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>We CAN Voyage Again!</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             background-color: #f0f0f0; /* Example background color */
             color: #333; /* Example text color */
-            font-family: sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             height: 100vh;
-            overflow: hidden; /* Prevent scrollbars */
+            overflow: hidden;
         }
 
         .container {
             width: 80vw;
             height: 80vh;
             border: 1px solid #ccc;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
-            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
             position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            padding: 1rem;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .top-section {
-            flex: 2;
+            width: 100%;
+            height: 66.66%; /* 2/3 of the container height */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .bottom-section {
-            flex: 1;
-            padding: 1rem;
+            width: 100%;
+            height: 33.33%; /* 1/3 of the container height */
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
+            text-align: center;
         }
 
         .navigation {
+            width: 100%;
             display: flex;
             justify-content: space-between;
         }
@@ -54,47 +60,49 @@
         .navigation a {
             color: #007bff; /* Example link color */
             text-decoration: none;
-            padding: 0.5rem;
+            padding: 5px;
         }
 
         .navigation a:hover {
             text-decoration: underline;
         }
-        .heading-text {
-            color: #1a202c; /* Example heading text color */
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
 
-        .accent-link {
-            color: #007bff; /* Example accent/link color */
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .accent-link:hover {
-            text-decoration: underline;
+        #ruby-logo {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 50px;
+          height: auto;
         }
+
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
     <div class="container">
-        <div class="flex justify-end">
-            <img src="assets/artificial-ruby-logo.png" alt="Ruby Logo" style="width: 50px; height: 50px;">
-        </div>
+      <img id="ruby-logo" src="assets/artificial-ruby-logo.png" alt="Ruby Logo"/>
         <div class="top-section">
-            <img src="assets/we_were_voyagers.gif" alt="Voyagers GIF" style="max-width: 100%; max-height: 100%;">
+            <img src="assets/we_were_voyagers.gif" alt="Voyagers GIF" />
         </div>
-
         <div class="bottom-section">
-            <h1 class="text-4xl font-bold heading-text mb-4">We CAN Voyage Again!</h1>
-            <ul class="list-disc text-xl leading-relaxed">
-                <li>Share your practical tools.</li>
-                <li>Share your wild experiments.</li>
-            </ul>
-            <p class="text-xl leading-relaxed">Let's harness Ruby's unique spirit for the AI age.</p>
+            <h1 class="title">We CAN Voyage Again!</h1>
+            <h2 class="subtitle">And all of you are invited!</h2>
+            <p>We need the talks that help us ship on Monday morning just as much as we need the ones that remind us why we chose Ruby instead of Java in the first place!</p>
             <div class="navigation">
-                <a href="/11_monkeyspaw_quick_look" class="accent-link">Previous</a>
-                <a href="#" class="accent-link">Next</a>
+                <a href="/11_monkeyspaw_quick_look">Prev</a>
+                <a></a>
             </div>
         </div>
-
     </div>
 </body>
 </html>

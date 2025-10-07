@@ -1,11 +1,8 @@
-Visual: Split screen? Left: A very simple example prompt text (e.g., the prompt for this slide).
-        Right: Maybe the MonkeysPaw logo or a super simple schema (Prompt -> AI -> HTML).
+Visual: Split screen
 
-Content:
+Title: MonkeysPaw: Wish-Driven Development for Ruby
 
-Title: MonkeysPaw: Prompt -> Web Page
-
-On the left: Example Prompt Text in a vertically overflow scrolling box:
+<!-- On the left: The following Example Prompt Text in a vertically overflow scrolling box in large font: -->
 # MonkeysPaw Home Page
 
 ## Page Content
@@ -59,8 +56,8 @@ MonkeysPaw.pick_up!
 - Create an atmosphere that balances wonder with a touch of foreboding
 
 
-On the right:
-Monkeypaw rendered page from assets/monkeyspaw_sample_homepage.png
+<!-- On the right side: -->
+Monkeypaw rendered page from that prompt
 
-Next: /12_lets_voyage_again
-Prev: /10_the_reveal
+Next: 18_2_monkeyspaw_javascript
+Prev: 17_monkeys_paw

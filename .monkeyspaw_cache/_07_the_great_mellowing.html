@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 2: The Great Mellowing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .slide-card {
+            background: rgba(30, 30, 30, 0.9);
+            border: 3px solid #00ff00;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .visual-transition {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to right, 
+                #ff6b6b 0%, 
+                #ff8e53 20%, 
+                #ff6b9d 40%, 
+                #c9c9c9 60%, 
+                #a0a0a0 80%, 
+                #808080 100%);
+            animation: desaturate 6s ease-in-out infinite alternate;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        @keyframes desaturate {
+            0% {
+                filter: saturate(2) brightness(1.2);
+                background: linear-gradient(to right, 
+                    #ff6b6b 0%, 
+                    #ff8e53 20%, 
+                    #ff6b9d 40%, 
+                    #4ecdc4 60%, 
+                    #45b7d1 80%, 
+                    #f9ca24 100%);
+            }
+            100% {
+                filter: saturate(0) brightness(0.8);
+                background: linear-gradient(to right, 
+                    #c9c9c9 0%, 
+                    #b8b8b8 20%, 
+                    #a8a8a8 40%, 
+                    #989898 60%, 
+                    #888888 80%, 
+                    #787878 100%);
+            }
+        }
+        
+        .sunset-orb {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff6b6b 0%, #ff8e53 50%, #ff6b9d 100%);
+            animation: sunsetFade 8s ease-in-out infinite;
+            margin: 0 auto;
+            position: relative;
+            top: -140px;
+        }
+        
+        @keyframes sunsetFade {
+            0% {
+                background: radial-gradient(circle, #ffeb3b 0%, #ff9800 50%, #f44336 100%);
+                transform: translateY(0px);
+            }
+            50% {
+                background: radial-gradient(circle, #ff9800 0%, #f44336 50%, #9c27b0 100%);
+                transform: translateY(20px);
+            }
+            100% {
+                background: radial-gradient(circle, #424242 0%, #212121 50%, #000000 100%);
+                transform: translateY(40px);
+            }
+        }
+        
+        .nav-link {
+            background: rgba(0, 255, 0, 0.2);
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link:hover {
+            background: rgba(0, 255, 0, 0.4);
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-green-300 overflow-hidden">
+    <!-- Previous Navigation -->
+    <div class="fixed left-8 top-1/2 transform -translate-y-1/2 z-10">
+        <a href="/06_3_hidden_influence" class="nav-link">Previous</a>
+    </div>
+    
+    <!-- Next Navigation -->
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 z-10">
+        <a href="/08_growing_up" class="nav-link">Next</a>
+    </div>
+    
+    <!-- Main Slide Container -->
+    <div class="slide-card w-[80vw] h-[80vh] flex flex-col items-center justify-center p-8 relative">
+        <!-- Logo -->
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="absolute top-4 right-4 w-16 h-16 opacity-80">
+        
+        <!-- Main Content -->
+        <div class="text-center flex flex-col items-center justify-center h-full">
+            <!-- Visual Transition Element -->
+            <div class="visual-transition mb-8"></div>
+            <div class="sunset-orb"></div>
+            
+            <!-- Title -->
+            <h1 class="text-6xl font-black text-white mb-8 tracking-wider" style="text-shadow: 0 0 20px rgba(255,255,255,0.5);">
+                ACT 2: THE GREAT MELLOWING
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl text-green-200 italic opacity-80">
+                Where vibrant dreams slowly fade to wisdom's grayscale
+            </p>
+        </div>
+    </div>
+</body>
+</html>

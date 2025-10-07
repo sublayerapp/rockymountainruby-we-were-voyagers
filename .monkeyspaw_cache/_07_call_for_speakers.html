@@ -3,37 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bring Your Creations!</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Call for Speakers</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0; /* Example background color */
-            color: #333; /* Example text color */
-            margin: 0;
-            padding: 0;
+            background-color: #f0f0f0; /* Example background color, adjust as needed */
+            color: #333; /* Example text color, adjust as needed */
+            font-family: sans-serif;
             height: 100vh;
-            overflow: hidden; /* Prevent scrollbars */
+            margin: 0;
+            overflow: hidden;
         }
 
-        .slide-container {
+        .container {
             width: 80vw;
             height: 80vh;
             border: 1px solid #ccc;
-            background-color: white;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 1rem;
             box-sizing: border-box;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         .content-area {
@@ -43,53 +35,85 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 1rem;
-            text-align: center;
+            padding: 0 2rem;
+            text-align: center
         }
 
         .navigation-area {
             width: 100%;
+            padding: 1rem 0;
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem;
         }
 
-        .navigation-link {
-            color: #007bff; /* Example accent/link color */
+        .navigation-area a {
+            color: #007bff; /* Example accent color */
             text-decoration: none;
-            padding: 0.5rem;
         }
 
-        .navigation-link:hover {
+        .navigation-area a:hover {
             text-decoration: underline;
         }
 
-        .heading-text {
-            color: #0056b3; /* Example heading text color */
+        .artificial-ruby-logo {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 50px;
+            height: auto;
         }
 
-        /* Add more styles as needed */
+        /* Example background pattern */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(45deg, #ddd 25%, transparent 25%),
+                              linear-gradient(-45deg, #ddd 25%, transparent 25%),
+                              linear-gradient(135deg, #ddd 25%, transparent 25%),
+                              linear-gradient(-135deg, #ddd 25%, transparent 25%);
+            background-size: 20px 20px;
+            opacity: 0.1;
+            z-index: -1;
+        }
     </style>
 </head>
-<body>
-    <div class="slide-container">
-        <div style="position: absolute; top: 10px; right: 10px;">
-            <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" width="50">
-        </div>
+<body class="flex justify-center items-center">
+    <div class="container relative">
+        <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" class="artificial-ruby-logo">
 
         <div class="content-area">
-            <h1 class="text-4xl font-bold heading-text mb-4">Bring Your Creations! (Practical & Weird)</h1>
-            <p class="text-xl leading-relaxed">We need talks on useful libraries AND quirky experiments!</p>
-            <br/>
-            <p class="text-xl leading-relaxed">All speakers get a special Artificial Ruby T-shirt for sharing!</p>
-            <p class="text-xl leading-relaxed">Experimental talks ("like this one...") get a bonus Poignant Guide for bravery!</p>
-            <br/>
-            <p class="text-xl leading-relaxed">Want help brainstorming? Talk to me!</p>
+            <h1 class="text-3xl font-bold text-blue-500 mb-4">Call for Speakers</h1>
+
+            <section class="mb-6">
+                <h2 class="text-2xl font-bold mb-2">Production</h2>
+                <p>Ruby AI in production</p>
+                <p>AI technique/tutorials</p>
+                <p>Releases/demos of AI Gems or resources</p>
+            </section>
+
+            <section class="mb-6">
+                <h2 class="text-2xl font-bold mb-2">Process</h2>
+                <p>Ruby AI code generation and developer assistance</p>
+                <p>What's in your toolbox? (Your custom stack for writing Ruby/Rails with AI)</p>
+                <p>Rails apps with MCP</p>
+            </section>
+
+            <section class="mb-6">
+                <h2 class="text-2xl font-bold mb-2">Experimental</h2>
+                <p>Talks like this one demo'ing some weird, unusual, or experimental AI thing with Ruby</p>
+            </section>
+
+            <p class="text-sm w-full text-center">Two special gifts for speakers!</p>
+            <p class="text-sm w-full text-center">Offer: Want help brainstorming? Talk to me!</p>
         </div>
 
         <div class="navigation-area">
-            <a href="/06_artificial_ruby" class="navigation-link">Prev</a>
-            <a href="/08_the_setup" class="navigation-link">Next</a>
+            <a href="/06_artificial_ruby">Prev</a>
+            <a href="/08_the_setup">Next</a>
         </div>
     </div>
 </body>

@@ -5,76 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentation Slide</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #f0f0f0; /* Example background color */
-            color: #333; /* Example text color */
+            background-color: #f0f0f0;
+            color: #333;
             font-family: 'Roboto', sans-serif;
         }
         .slide-container {
             width: 80vw;
             height: 80vh;
             border: 1px solid #ccc;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-            margin: 0 auto; /* centers the container horizontally*/
-            position: absolute; /* allows vertical centering */
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* precisely centers the container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .slide-content {
-            flex-grow: 1;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
+        .heading-text {
+            color: #007bff; /* Example heading color */
         }
-        .navigation {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem;
+        .primary-text {
+            color: #333; /* Example primary text color */
         }
-        .navigation a {
+        .accent-link {
             color: #007bff; /* Example link color */
-            text-decoration: none;
-            padding: 0.5rem;
         }
-        .navigation a:hover {
+        .accent-link:hover {
             text-decoration: underline;
-        }
-        h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        /* Example text styling */
-        .large-text {
-            font-size: 2em;
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="slide-container">
-        <div style="position: absolute; top: 10px; right: 10px;">
+<body class="flex items-center justify-center h-screen">
+    <div class="slide-container flex flex-col justify-between p-4">
+        
+        <div class="flex justify-end">
             <img src="assets/artificial-ruby-logo.png" alt="Artificial Ruby Logo" width="50">
         </div>
-        <div class="slide-content">
-            <p class="large-text">Wait...Why would Scott say: 'kinda like this talk'?</p>
+
+        <div class="flex-grow flex items-center justify-center">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold heading-text mb-4">Wait...Why would Scott say: 'talks like this one'?</h1>
+            </div>
         </div>
-        <div class="navigation">
-            <a href="/07_call_for_speakers">Prev</a>
-            <a href="/09_misdirection">Next</a>
+
+        <div class="flex justify-between">
+            <a href="/07_call_for_speakers" class="accent-link">Previous</a>
+            <a href="/09_misdirection" class="accent-link">Next</a>
         </div>
     </div>
 </body>
